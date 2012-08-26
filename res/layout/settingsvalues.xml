@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1.0" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="8dp" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" >
+
+            <Button
+                android:id="@+id/ResetButton"
+                android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/button_load_defaults" />
+
+            <Button
+                android:id="@+id/SaveButton"
+                android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/button_save" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/HorizontalSettingsSpacer" />
+
+        <!-- color -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0" >
+
+            <TextView
+                style="@style/SettingsTextView"
+                android:text="@string/label_color" />
+
+            <SeekBar
+                android:id="@+id/RedAmountSeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <SeekBar
+                android:id="@+id/GreenAmountSeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <SeekBar
+                android:id="@+id/BlueAmountSeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/HorizontalSettingsSpacer" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0" >
+
+            <TextView
+                style="@style/SettingsTextView"
+                android:text="@string/label_contrast" />
+
+            <SeekBar
+                android:id="@+id/ContrastSeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="4dp"
+                android:layout_weight="1.0" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/HorizontalSettingsSpacer" />
+
+        <!-- size, distance -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <!-- columns -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1.0" >
+
+                <TextView
+                    style="@style/SettingsTextView"
+                    android:text="@string/label_column_count" />
+
+                <SeekBar
+                    android:id="@+id/ColumnCountSeekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- rows -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1.0" >
+
+                <TextView
+                    style="@style/SettingsTextView"
+                    android:text="@string/label_row_count" />
+
+                <SeekBar
+                    android:id="@+id/RowCountSeekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- distance per scroll -->
+        <View
+            style="@style/HorizontalSettingsSpacer" />        
+        
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0" >
+
+            <TextView
+                style="@style/SettingsTextView"
+                android:text="@string/label_distance_per_scroll" />
+
+            <SeekBar
+                android:id="@+id/DistanceSeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="4dp"
+                android:layout_weight="1.0" />
+
+        </LinearLayout>
+
+        <!-- speed -->
+        <View
+            style="@style/HorizontalSettingsSpacer" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0" >
+
+            <TextView
+                style="@style/SettingsTextView"
+                android:text="@string/label_strobe_fps" />
+
+            <SeekBar
+                android:id="@+id/StrobeFpsSeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="4dp"
+                android:layout_weight="1.0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
