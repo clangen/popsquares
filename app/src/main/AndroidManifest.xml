@@ -2,8 +2,6 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.clangen.gfx.popsquares"
-    android:versionCode="20"
-    android:versionName="0.7"
     android:installLocation="auto" >
 
     <application
