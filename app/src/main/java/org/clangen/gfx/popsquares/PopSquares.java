@@ -94,7 +94,6 @@ public class PopSquares {
     public synchronized void moveTo(float newOffset) {
         if (mDrawQueue != null) {
             int pixelOffset = (int) (newOffset * (float) (mVirtualWidth - mScreenWidth));
-            //Log.i(TAG, String.valueOf(newOffset) + " " + String.valueOf(pixelOffset));
             mDrawQueue.sendDrawMove(pixelOffset);
             mDrawQueue.sendDrawStrobe(100);
         }
@@ -204,10 +203,10 @@ public class PopSquares {
         int count = SIN_TABLE_SIZE;
         int base = PALLETTE_SIZE / 2;
         mSin = new int[count];
-        float mult = (float) (base - 1);
+        float multiplier = (float) (base - 1);
         double radPerStep = ((360.0 / (float)count) * (3.1415 / 180.0));
         for (int i = 0; i < count; i++) {
-            mSin[i] = base + (int)(mult * Math.sin((double)i * radPerStep));
+            mSin[i] = base + (int)(multiplier * Math.sin((double)i * radPerStep));
         }
     }
 
@@ -249,7 +248,7 @@ public class PopSquares {
     }
 
     private void drawWithOffset(Canvas canvas, int pixelOffset, boolean strobe) {
-        int firstCol = (int) pixelOffset / mColumnWidth;
+        int firstCol = pixelOffset / mColumnWidth;
         int lastCol = firstCol + mVisibleColumns;
 
         if (pixelOffset % mColumnWidth != 0) {
@@ -380,25 +379,26 @@ public class PopSquares {
                         SurfaceHolder holder = mSurfaceHolder;
                         if (holder != null) {
                             Canvas canvas = holder.lockCanvas();
-                            final Rect bounds = canvas.getClipBounds();
 
-                            if ( ! mLastBounds.equals(bounds)) {
-                                holder.unlockCanvasAndPost(canvas);
-                                mContext.sendBroadcast(new Intent(ACTION_ORIENTATION_CHANGED));
-                            }
-                            else if (canvas != null) {
-                                if (msg.what == MESSAGE_DRAW_TYPE_MOVE) {
-                                    drawMoveFrame(canvas, msg.arg1);
-                                }
-                                else if (msg.what == MESSAGE_DRAW_TYPE_STROBE) {
-                                    long delay = drawStrobeFrame(canvas);
+                            if (canvas != null) {
+                                final Rect bounds = canvas.getClipBounds();
 
-                                    if (delay != Long.MAX_VALUE) {
-                                        sendDrawStrobe(delay);
+                                if (!mLastBounds.equals(bounds)) {
+                                    holder.unlockCanvasAndPost(canvas);
+                                    mContext.sendBroadcast(new Intent(ACTION_ORIENTATION_CHANGED));
+                                } else {
+                                    if (msg.what == MESSAGE_DRAW_TYPE_MOVE) {
+                                        drawMoveFrame(canvas, msg.arg1);
+                                    } else if (msg.what == MESSAGE_DRAW_TYPE_STROBE) {
+                                        long delay = drawStrobeFrame(canvas);
+
+                                        if (delay != Long.MAX_VALUE) {
+                                            sendDrawStrobe(delay);
+                                        }
                                     }
-                                }
 
-                                holder.unlockCanvasAndPost(canvas);
+                                    holder.unlockCanvasAndPost(canvas);
+                                }
                             }
                         }
                     }

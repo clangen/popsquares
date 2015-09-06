@@ -50,22 +50,59 @@
                 style="@style/SettingsTextView"
                 android:text="@string/label_color" />
 
-            <SeekBar
-                android:id="@+id/RedAmountSeekBar"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp" />
 
-            <SeekBar
-                android:id="@+id/GreenAmountSeekBar"
-                android:layout_width="fill_parent"
+            <TableLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp" />
+                android:stretchColumns="1">
 
-            <SeekBar
-                android:id="@+id/BlueAmountSeekBar"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:text="red:" />
+
+                    <SeekBar
+                        android:id="@+id/RedAmountSeekBar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"/>
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:text="green:" />
+
+                    <SeekBar
+                        android:id="@+id/GreenAmountSeekBar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"/>
+
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:text="blue:" />
+
+                    <SeekBar
+                        android:id="@+id/BlueAmountSeekBar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"/>
+                </TableRow>
+
+            </TableLayout>
 
         </LinearLayout>
 
