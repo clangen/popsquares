@@ -54,6 +54,8 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:padding="0dp"
                 android:stretchColumns="1">
 
                 <TableRow>
@@ -68,7 +70,8 @@
                         android:id="@+id/RedAmountSeekBar"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"/>
+                        android:progressDrawable="@drawable/seekbar_track"
+                        android:layout_marginLeft="4dp"/>
 
                 </TableRow>
 
@@ -84,7 +87,8 @@
                         android:id="@+id/GreenAmountSeekBar"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"/>
+                        android:progressDrawable="@drawable/seekbar_track"
+                        android:layout_marginLeft="4dp"/>
 
                 </TableRow>
                 <TableRow>
@@ -99,7 +103,8 @@
                         android:id="@+id/BlueAmountSeekBar"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"/>
+                        android:progressDrawable="@drawable/seekbar_track"
+                        android:layout_marginLeft="4dp"/>
                 </TableRow>
 
             </TableLayout>
@@ -112,8 +117,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0" >
+            android:layout_height="wrap_content" >
 
             <TextView
                 style="@style/SettingsTextView"
@@ -123,7 +127,7 @@
                 android:id="@+id/ContrastSeekBar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="4dp"
+                android:progressDrawable="@drawable/seekbar_track"
                 android:layout_weight="1.0" />
 
         </LinearLayout>
@@ -134,7 +138,7 @@
         <!-- size, distance -->
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <!-- columns -->
@@ -153,7 +157,8 @@
                 <SeekBar
                     android:id="@+id/ColumnCountSeekBar"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/seekbar_track" />
 
             </LinearLayout>
 
@@ -163,7 +168,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="8dp"
                 android:layout_weight="1.0" >
 
                 <TextView
@@ -173,7 +177,8 @@
                 <SeekBar
                     android:id="@+id/RowCountSeekBar"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/seekbar_track" />
 
             </LinearLayout>
 
@@ -187,8 +192,7 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1.0" >
+            android:layout_gravity="center_vertical">
 
             <TextView
                 style="@style/SettingsTextView"
@@ -198,7 +202,7 @@
                 android:id="@+id/DistanceSeekBar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="4dp"
+                android:progressDrawable="@drawable/seekbar_track"
                 android:layout_weight="1.0" />
 
         </LinearLayout>
@@ -210,8 +214,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0" >
+            android:layout_height="wrap_content">
 
             <TextView
                 style="@style/SettingsTextView"
@@ -220,8 +223,8 @@
             <SeekBar
                 android:id="@+id/StrobeFpsSeekBar"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:paddingRight="4dp"
+                android:layout_height="0dp"
+                android:progressDrawable="@drawable/seekbar_track"
                 android:layout_weight="1.0" />
 
         </LinearLayout>

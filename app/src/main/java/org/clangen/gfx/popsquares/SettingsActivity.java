@@ -37,7 +37,6 @@ public class SettingsActivity extends Activity {
 
     public static final String ACTION_SETTINGS_STARTED = "org.clangen.gfx.popsquares.ACTION_SETTINGS_STARTED";
     public static final String ACTION_SETTINGS_FINISHED = "org.clangen.gfx.popsquares.ACTION_SETTINGS_FINISHED";
-    public static final String ACTION_SETTINGS_PRIORITY_CHANGED = "org.clangen.gfx.popsquares.ACTION_PRIORITY_CHANGED";
 
     private static final int MIN_SIZE = 1;
     private static final int MAX_SIZE = 16;
@@ -196,7 +195,7 @@ public class SettingsActivity extends Activity {
     }
 
     private void addBuiltInProfiles() {
-        if (( ! builtInProfilesAdded())) {
+        if ((!builtInProfilesAdded())) {
             new ProfileLoader().execute(new Void[] { });
         }
     }
@@ -312,7 +311,7 @@ public class SettingsActivity extends Activity {
         EditText edit = (EditText) dialog.findViewById(R.id.ProfileNameEditText);
 
         String name = edit.getText().toString().trim();
-        if ((name == null) || (name.length() == 0)) {
+        if ((name.length() == 0)) {
             showInvalidNameDialog();
             return null;
         }
@@ -513,7 +512,7 @@ public class SettingsActivity extends Activity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            if ( ! mPaused && mProgressDialog != null) {
+            if (!mPaused && mProgressDialog != null) {
                 mProgressDialog.dismiss();
             }
 
@@ -524,7 +523,7 @@ public class SettingsActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            if ( ! mPaused) {
+            if (!mPaused) {
                 mProgressDialog =
                     ProgressDialog.show(
                         SettingsActivity.this,
@@ -536,7 +535,7 @@ public class SettingsActivity extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             synchronized (ProfileLoader.class) {
-                if ( ! builtInProfilesAdded()) {
+                if (!builtInProfilesAdded()) {
                     Log.i(TAG, "Profiles don't exist, creating...");
 
                     if (mProfileLibrary.addBuiltInProfiles()) {
@@ -554,7 +553,7 @@ public class SettingsActivity extends Activity {
         protected void setPreferenceBoolean(int id) {
             SharedPreferences.Editor editor = mPrefs.edit();
             editor.putBoolean(getString(id), true);
-            editor.commit();
+            editor.apply();
         }
     }
 }

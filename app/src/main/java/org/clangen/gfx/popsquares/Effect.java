@@ -117,8 +117,7 @@ public class Effect {
         editor.remove(getKey(R.string.pref_strobe_fps));
         editor.remove(getKey(R.string.pref_contrast));
         editor.remove(getKey(R.string.pref_distance_per_scroll));
-        editor.commit();
-
+        editor.apply();
         broadcastChanged();
     }
 
@@ -143,7 +142,7 @@ public class Effect {
         if (current != value) {
             SharedPreferences.Editor editor = mPrefs.edit();
             editor.putInt(getKey(key), value);
-            editor.commit();
+            editor.apply();
             return true;
         }
 
@@ -186,8 +185,9 @@ public class Effect {
         try {
             // reading an invalid key will throw an exception
             JSONObject json = new JSONObject(string);
-            int rowCount = json.getInt(getKey(R.string.pref_row_count));
-            int columnCount = json.getInt(getKey(R.string.pref_column_count));
+            int size = json.optInt(getKey(R.string.pref_size), 5);
+            int rowCount = json.optInt(getKey(R.string.pref_row_count), size);
+            int columnCount = json.optInt(getKey(R.string.pref_column_count), size);
             int range = json.getInt(getKey(R.string.pref_contrast));
             int redAmount = json.getInt(getKey(R.string.pref_red_amount));
             int greenAmount = json.getInt(getKey(R.string.pref_green_amount));
