@@ -39,7 +39,7 @@ public class SettingsActivity extends Activity {
     public static final String ACTION_SETTINGS_FINISHED = "org.clangen.gfx.popsquares.ACTION_SETTINGS_FINISHED";
 
     private static final int MIN_SIZE = 1;
-    private static final int MAX_SIZE = 16;
+    private static final int MAX_SIZE = 48;
     private static final int SIZE_STEP_COUNT = MAX_SIZE - MIN_SIZE;
     private static final int MIN_CONTRAST = 0;
     private static final int MAX_CONTRAST = 255;
@@ -71,7 +71,7 @@ public class SettingsActivity extends Activity {
         SeekBar mStrobeFpsSeekBar;
         SeekBar mScrollDistanceSeekBar;
         ListView mProfilesListView;
-        Button mBuilderButton;
+        Button mEditorButton;
         Button mLibraryButton;
         ViewFlipper mFlipper;
     }
@@ -118,8 +118,8 @@ public class SettingsActivity extends Activity {
         mViews.mLibraryButton = (Button) findViewById(R.id.LibraryButton);
         mViews.mLibraryButton.setOnClickListener(mLibraryClickListener);
 
-        mViews.mBuilderButton = (Button) findViewById(R.id.BuilderButton);
-        mViews.mBuilderButton.setOnClickListener(mBuilderClickListener);
+        mViews.mEditorButton = (Button) findViewById(R.id.EditorButton);
+        mViews.mEditorButton.setOnClickListener(mEditorClickListener);
 
         reloadSettings();
         reloadProfiles();
@@ -229,7 +229,7 @@ public class SettingsActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.invalid_name_title);
         builder.setMessage(R.string.invalid_name_message);
-        builder.setPositiveButton(R.string.button_ok, null);
+        builder.setPositiveButton(R.string.button_close_app, null);
         builder.show();
     }
 
@@ -263,9 +263,9 @@ public class SettingsActivity extends Activity {
 
     private void showConfirmResetDialog() {
         showConfirmDialog(
-            getString(R.string.confirm_reset_title),
-            getString(R.string.confirm_reset_message),
-            mConfirmResetDefaultsListener);
+                getString(R.string.confirm_reset_title),
+                getString(R.string.confirm_reset_message),
+                mConfirmResetDefaultsListener);
     }
 
     private void showConfirmProfileDeleteDialog(long id) {
@@ -320,14 +320,10 @@ public class SettingsActivity extends Activity {
     }
 
     private void flipToLibrary() {
-        mViews.mLibraryButton.setVisibility(View.GONE);
-        mViews.mBuilderButton.setVisibility(View.VISIBLE);
         mViews.mFlipper.showPrevious();
     }
 
     private void flipToBuilder() {
-        mViews.mLibraryButton.setVisibility(View.VISIBLE);
-        mViews.mBuilderButton.setVisibility(View.GONE);
         mViews.mFlipper.showNext();
     }
 
@@ -445,7 +441,7 @@ public class SettingsActivity extends Activity {
         }
     };
 
-    private OnClickListener mBuilderClickListener = new OnClickListener() {
+    private OnClickListener mEditorClickListener = new OnClickListener() {
         public void onClick(View view) {
             flipToBuilder();
         }

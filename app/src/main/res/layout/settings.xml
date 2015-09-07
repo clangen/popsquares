@@ -34,29 +34,9 @@
             android:layout_height="wrap_content" >
 
             <Button
+                style="@style/CloseButton"
                 android:id="@+id/OKButton"
-                android:gravity="center"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/button_ok" />
-
-            <Button
-                android:id="@+id/LibraryButton"
-                android:gravity="center"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/button_effect_library" />
-
-            <Button
-                android:id="@+id/BuilderButton"
-                android:gravity="center"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:visibility="gone"
-                android:text="@string/button_effect_builder" />
+                android:text="@string/button_close_app" />
 
         </LinearLayout>
 

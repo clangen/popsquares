@@ -6,6 +6,17 @@
     android:layout_weight="1.0"
     android:padding="8dp" >
 
+    <!-- button header -->
+    <LinearLayout
+        style="@style/ButtonBar" >
+
+        <Button
+            style="@style/HeaderButton"
+            android:id="@+id/EditorButton"
+            android:text="@string/button_editor" />
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/ProfilesListView"
         android:layout_width="fill_parent"

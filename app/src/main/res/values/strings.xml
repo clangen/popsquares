@@ -5,21 +5,24 @@
     <string name="wallpaper_description">A blatant ripoff of the Pop Squares XScreensaver hack.</string>
     <string name="settings_activity_title">Pop Squares Settings</string>
 
-    <string name="button_ok">OK</string>
-    <string name="button_effect_library">Effect Library</string>
-    <string name="button_effect_builder">Effect Builder</string>
-    <string name="button_load_defaults">Load Defaults</string>
-    <string name="button_save">Save</string>
+    <string name="button_close_app">close</string>
+    <string name="button_load">load</string>
+    <string name="button_editor">back to editor</string>
+    <string name="button_load_defaults">reset</string>
+    <string name="button_save">save</string>
     <string name="button_cancel">Cancel</string>
+    <string name="button_done">Cancel</string>
     <string name="button_yes">Yes</string>
     <string name="button_no">No</string>
 
-    <string name="label_row_count">row count:</string>
-    <string name="label_column_count">column count:</string>
-    <string name="label_strobe_fps">strobe speed:</string>
+    <string name="label_row_count">x count:</string>
+    <string name="label_column_count">y count:</string>
+    <string name="label_strobe_fps">fps:</string>
     <string name="label_color">color:</string>
+    <string name="label_squares">squares:</string>
+    <string name="label_behavior">behavior:</string>
     <string name="label_contrast">contrast:</string>
-    <string name="label_distance_per_scroll">scroll distance:</string>
+    <string name="label_distance_per_scroll">scroll:</string>
 
     <string name="checkbox_low_priority">low priority</string>
 

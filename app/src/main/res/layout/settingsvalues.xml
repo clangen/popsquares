@@ -12,32 +12,26 @@
         android:layout_height="fill_parent"
         android:padding="8dp" >
 
+        <!-- button header -->
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp" >
+                style="@style/ButtonBar" >
 
             <Button
-                android:id="@+id/ResetButton"
-                android:gravity="center"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/button_load_defaults" />
+                style="@style/HeaderButton"
+                android:id="@+id/LibraryButton"
+                android:text="@string/button_load" />
 
             <Button
+                style="@style/HeaderButton"
                 android:id="@+id/SaveButton"
-                android:gravity="center"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
                 android:text="@string/button_save" />
 
-        </LinearLayout>
+            <Button
+                style="@style/HeaderButton"
+                android:id="@+id/ResetButton"
+                android:text="@string/button_load_defaults" />
 
-        <View
-            style="@style/HorizontalSettingsSpacer" />
+        </LinearLayout>
 
         <!-- color -->
         <LinearLayout
@@ -47,7 +41,7 @@
             android:layout_weight="1.0" >
 
             <TextView
-                style="@style/SettingsTextView"
+                style="@style/HeaderView"
                 android:text="@string/label_color" />
 
 
@@ -60,173 +54,125 @@
 
                 <TableRow>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="right"
+                        style="@style/TableLayoutLabel"
                         android:text="red:" />
 
                     <SeekBar
-                        android:id="@+id/RedAmountSeekBar"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:progressDrawable="@drawable/seekbar_track"
-                        android:layout_marginLeft="4dp"/>
+                        style="@style/TableSeekBar"
+                        android:id="@+id/RedAmountSeekBar" />
 
                 </TableRow>
 
                 <TableRow>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="right"
+                        style="@style/TableLayoutLabel"
                         android:text="green:" />
 
                     <SeekBar
-                        android:id="@+id/GreenAmountSeekBar"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:progressDrawable="@drawable/seekbar_track"
-                        android:layout_marginLeft="4dp"/>
+                        style="@style/TableSeekBar"
+                        android:id="@+id/GreenAmountSeekBar"/>
 
                 </TableRow>
                 <TableRow>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="right"
+                        style="@style/TableLayoutLabel"
                         android:text="blue:" />
 
                     <SeekBar
-                        android:id="@+id/BlueAmountSeekBar"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:progressDrawable="@drawable/seekbar_track"
-                        android:layout_marginLeft="4dp"/>
+                        style="@style/TableSeekBar"
+                        android:id="@+id/BlueAmountSeekBar"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TableLayoutLabel"
+                        android:text="@string/label_contrast" />
+
+                    <SeekBar
+                        style="@style/TableSeekBar"
+                        android:id="@+id/ContrastSeekBar"/>
                 </TableRow>
 
             </TableLayout>
 
         </LinearLayout>
 
-        <View
-            style="@style/HorizontalSettingsSpacer" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                style="@style/SettingsTextView"
-                android:text="@string/label_contrast" />
-
-            <SeekBar
-                android:id="@+id/ContrastSeekBar"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:progressDrawable="@drawable/seekbar_track"
-                android:layout_weight="1.0" />
-
-        </LinearLayout>
-
-        <View
-            style="@style/HorizontalSettingsSpacer" />
-
-        <!-- size, distance -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <!-- columns -->
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1.0" >
-
-                <TextView
-                    style="@style/SettingsTextView"
-                    android:text="@string/label_column_count" />
-
-                <SeekBar
-                    android:id="@+id/ColumnCountSeekBar"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:progressDrawable="@drawable/seekbar_track" />
-
-            </LinearLayout>
-
-            <!-- rows -->
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1.0" >
-
-                <TextView
-                    style="@style/SettingsTextView"
-                    android:text="@string/label_row_count" />
-
-                <SeekBar
-                    android:id="@+id/RowCountSeekBar"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:progressDrawable="@drawable/seekbar_track" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- distance per scroll -->
-        <View
-            style="@style/HorizontalSettingsSpacer" />        
-        
+        <!-- shape -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+            android:layout_weight="1.0" >
 
             <TextView
-                style="@style/SettingsTextView"
-                android:text="@string/label_distance_per_scroll" />
+                style="@style/HeaderView"
+                android:text="@string/label_squares" />
 
-            <SeekBar
-                android:id="@+id/DistanceSeekBar"
-                android:layout_width="fill_parent"
+            <TableLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:progressDrawable="@drawable/seekbar_track"
-                android:layout_weight="1.0" />
+                android:layout_margin="0dp"
+                android:padding="0dp"
+                android:stretchColumns="1">
 
+                <TableRow>
+                    <TextView
+                        style="@style/TableLayoutLabel"
+                        android:text="@string/label_column_count" />
+
+                    <SeekBar
+                        style="@style/TableSeekBar"
+                        android:id="@+id/ColumnCountSeekBar" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TableLayoutLabel"
+                        android:text="@string/label_row_count" />
+
+                    <SeekBar
+                        style="@style/TableSeekBar"
+                        android:id="@+id/RowCountSeekBar" />
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
 
-        <!-- speed -->
-        <View
-            style="@style/HorizontalSettingsSpacer" />
 
+        <!-- behavior -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0" >
 
             <TextView
-                style="@style/SettingsTextView"
-                android:text="@string/label_strobe_fps" />
+                style="@style/HeaderView"
+                android:text="@string/label_behavior" />
 
-            <SeekBar
-                android:id="@+id/StrobeFpsSeekBar"
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:progressDrawable="@drawable/seekbar_track"
-                android:layout_weight="1.0" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:padding="0dp"
+                android:stretchColumns="1">
 
+                <TableRow>
+                    <TextView
+                        style="@style/TableLayoutLabel"
+                        android:text="@string/label_distance_per_scroll" />
+
+                    <SeekBar
+                        style="@style/TableSeekBar"
+                        android:id="@+id/DistanceSeekBar" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TableLayoutLabel"
+                        android:text="@string/label_strobe_fps" />
+
+                    <SeekBar
+                        style="@style/TableSeekBar"
+                        android:id="@+id/StrobeFpsSeekBar"/>
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
 
     </LinearLayout>

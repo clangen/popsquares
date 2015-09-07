@@ -295,6 +295,10 @@ public class PopSquares {
     }
 
     public long drawMoveFrame(Canvas canvas, int globalOffset) {
+        if (mEffect.getColumnCount() == 1) {
+            globalOffset = 0;
+        }
+
         long start = System.currentTimeMillis();
 
         long elapsedSinceLastStrobe = (start - mLastStrobeTime);
