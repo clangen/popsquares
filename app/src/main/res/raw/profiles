@@ -1,26 +1,60 @@
 {
-    "turquoise": {
-        "pref_strobe_fps": 10,
-        "pref_red_amount": 60,
-        "pref_blue_amount": 200,
-        "pref_green_amount": 145,
-        "pref_contrast": 45,
-        "pref_size": 5
-    },
-    "red": {
-        "pref_strobe_fps": 7,
-        "pref_red_amount": 109,
-        "pref_blue_amount": 0,
-        "pref_green_amount": 0,
-        "pref_contrast": 73,
-        "pref_size": 5
-    },
-    "lighter blue": {
-        "pref_strobe_fps": 9,
-        "pref_red_amount": 82,
-        "pref_green_amount": 122,
-        "pref_blue_amount": 195,
-        "pref_contrast": 36,
-        "pref_size": 5
-    }
+  "turquoise": {
+    "pref_row_count": 19,
+    "pref_column_count": 17,
+    "pref_contrast": 48,
+    "pref_red_amount": 0,
+    "pref_green_amount": 142,
+    "pref_blue_amount": 167,
+    "pref_strobe_fps": 10,
+    "pref_distance_per_scroll": 3
+  },
+  "red": {
+    "pref_strobe_fps": 7,
+    "pref_red_amount": 109,
+    "pref_blue_amount": 0,
+    "pref_green_amount": 0,
+    "pref_contrast": 73,
+    "pref_size": 5
+  },
+  "blue bars": {
+    "pref_row_count": 1,
+    "pref_column_count": 16,
+    "pref_contrast": 36,
+    "pref_red_amount": 41,
+    "pref_green_amount": 109,
+    "pref_blue_amount": 183,
+    "pref_strobe_fps": 15,
+    "pref_distance_per_scroll": 3
+  },
+  "ocean": {
+    "pref_row_count": 46,
+    "pref_column_count": 1,
+    "pref_contrast": 36,
+    "pref_red_amount": 41,
+    "pref_green_amount": 109,
+    "pref_blue_amount": 183,
+    "pref_strobe_fps": 15,
+    "pref_distance_per_scroll": 0
+  },
+  "red bars": {
+    "pref_row_count": 1,
+    "pref_column_count": 5,
+    "pref_contrast": 108,
+    "pref_red_amount": 144,
+    "pref_green_amount": 35,
+    "pref_blue_amount": 0,
+    "pref_strobe_fps": 16,
+    "pref_distance_per_scroll": 4
+  },
+  "grass": {
+    "pref_row_count": 47,
+    "pref_column_count": 47,
+    "pref_contrast": 33,
+    "pref_red_amount": 44,
+    "pref_green_amount": 73,
+    "pref_blue_amount": 0,
+    "pref_strobe_fps": 9,
+    "pref_distance_per_scroll": 8
+  }
 }
