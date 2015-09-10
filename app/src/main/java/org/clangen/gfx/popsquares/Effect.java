@@ -12,14 +12,15 @@ import android.preference.PreferenceManager;
 public class Effect {
     public static final String ACTION_EFFECT_CHANGED = "org.clangen.gfx.popsquares.ACTION_SETTINGS_CHANGED";
 
+    /* default preset is "blue bars" */
     private final static int R_AMOUNT = 41;
     private final static int G_AMOUNT = 109;
     private final static int B_AMOUNT = 183;
-    private final static int ROW_COUNT = 5;
-    private final static int COLUMN_COUNT = 5;
-    private final static int STROBE_FPS = 9;
+    private final static int ROW_COUNT = 1;
+    private final static int COLUMN_COUNT = 16;
+    private final static int STROBE_FPS = 15;
     private final static int CONTRAST = 36;
-    private final static int DISTANCE = 3; // == columns per scroll * 2
+    private final static int DISTANCE = 3;
 
     private static Effect sInstance;
 
