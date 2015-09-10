@@ -5,8 +5,6 @@
     android:layout_height="fill_parent"
     android:layout_weight="1.0"
     android:padding="8dp" >
-
-    <!-- button header -->
     <LinearLayout
         style="@style/ButtonBar" >
 
