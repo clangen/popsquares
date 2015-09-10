@@ -1,8 +1,5 @@
 package org.clangen.gfx.popsquares;
 
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -14,6 +11,9 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.SurfaceHolder;
+
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
 public class PopSquares {
     private static final String TAG = "PopSquares";
@@ -261,7 +261,7 @@ public class PopSquares {
         Column column;
         Cell[] rows;
         Cell cell;
-        Rect rect;
+        Rect rect = new Rect();
 
         for (int x = firstCol; x < lastCol; x++) {
             column = mColumns.get(x);
@@ -270,9 +270,10 @@ public class PopSquares {
             for (int y = 0; y < column.mRows.length; y++) {
                 cell = rows[y];
 
-                rect = new Rect(cell.mRect);
-                rect.left -= pixelOffset;
-                rect.right -= pixelOffset;
+                rect.left = cell.mRect.left - pixelOffset;
+                rect.right = cell.mRect.right - pixelOffset;
+                rect.top = cell.mRect.top;
+                rect.bottom = cell.mRect.bottom;
 
                 canvas.drawRect(rect, mPallette[mSin[cell.mOffset]]);
 
