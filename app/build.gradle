@@ -8,12 +8,25 @@ android {
         applicationId "org.clangen.gfx.popsquares"
         minSdkVersion 16
         targetSdkVersion 16
-        versionCode 22
-        versionName "1.0"
+        versionCode 23
+        versionName "1.0.1"
     }
-    buildTypes {
+
+    signingConfigs {
+        debug {
+
+        }
         release {
-            minifyEnabled false
+
+        }
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

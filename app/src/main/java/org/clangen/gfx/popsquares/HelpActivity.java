@@ -44,18 +44,10 @@ public class HelpActivity extends Activity
                     }
                 });
 
-        findViewById(R.id.HideButton).setOnClickListener(
+        findViewById(R.id.CloseButton).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        final PackageManager packageManager = getPackageManager();
-                        final ComponentName component = new ComponentName(HelpActivity.this, HelpActivity.class);
-
-                        packageManager.setComponentEnabledSetting(
-                                component,
-                                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                                PackageManager.DONT_KILL_APP);
-
                         finish();
                     }
                 });
